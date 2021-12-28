@@ -1,6 +1,6 @@
-# Pull nginx image from Docker Hub
+# mengambil nginx image dari Docker Hub
 FROM nginx
 
-# Remove the default nginx config file and replace it with the new one
+# menghapus konfigurasi default dari nginx dan menggantinya dengan yang baru
 RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d/

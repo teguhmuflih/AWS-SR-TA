@@ -1,0 +1,8 @@
+chmod 400 aws_teguh.pem #inisiasi dengan memilih .pem sebagai key administrator
+scp -i aws_teguh.pem -r server/ ubuntu@--dns addres--:- #inisiasi alamat server
+
+#menghubungkan terminal dengan ssh ke aws
+ssh -i aws_teguh.pem ubuntu@--dns adress--
+chmod +x ./init.sh #execute init.sh
+./init.sh
+

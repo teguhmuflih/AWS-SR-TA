@@ -4,7 +4,7 @@ from flask import Flask, request, jsonify
 from deploy import Keyword_Spotting_Service
 
 
-# instantiate flask app
+# inisiasi flask app
 app = Flask(__name__)
 
 
@@ -21,19 +21,20 @@ def predict():
     ]
 	"""
 	
-	# get file from POST request and save it
+	# mengambil file dari request POST dan menyimpannya 
 	audio_file = request.files["file"]
 	file_name = str(random.randint(0, 100000))
 	audio_file.save(file_name)
 
-	# instantiate keyword spotting service singleton and get prediction
+	# inisiasi keyword spotting service  dan mendapatkan prediksi
 	kss = Keyword_Spotting_Service()
 	predicted_keyword = kss.predict(file_name)
 
-	# we don't need the audio file any more - let's delete it!
+	# karena sudah tidak dibutuhkan file audio, maka dihapus saja
 	os.remove(file_name)
 
 	# send back result as a json file
+	# mengirim kembali hasil prediksi dalam bentuk json file
 	result = {"keyword": predicted_keyword}
 	return jsonify(result)
 

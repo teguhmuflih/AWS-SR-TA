@@ -1,7 +1,7 @@
 # Pull tensorflow image with Python3
 FROM tensorflow/tensorflow:2.1.0-py3
 
-# Set the working directory to /app
+# mengatur working directory ke /app
 WORKDIR /app
 
 # Transfer content from current dir to /app in container
