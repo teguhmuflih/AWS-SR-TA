@@ -16,7 +16,7 @@ class _Keyword_Spotting_Service:
 
 
     def predict(self, file_path):
-
+        
         # Ekstraksi MFCC
         MFCCs = self.preprocess(file_path)
 
