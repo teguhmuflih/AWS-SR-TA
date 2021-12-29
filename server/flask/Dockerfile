@@ -13,5 +13,5 @@ RUN apt-get update && apt-get install -y libsndfile1 libasound-dev portaudio19-d
 # Install python packages
 RUN pip install -r requirements.txt
 
-# Start uWSGI using config file
+# Start uWSGI menggunakan config file
 CMD ["uwsgi", "app.ini"]
